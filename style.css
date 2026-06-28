@@ -6,33 +6,32 @@
    ==================================================================== */
 
 :root {
-  --teal: #0A3C36;
-  --teal-dark: #072C28;
-  --teal-soft: #165E54;
-  --red: #E52329;
-  --red-hover: #C61D22;
   --white: #ffffff;
-  --mint-bg: #F2F7F6;
-  --mint-card: #ffffff;
-  --mint-divider: #E1ECEB;
-  --ink: #142926;
-  --ink-soft: #4B625E;
-  --gold: #C99A4E;
-  --gold-bright: #E4C58A;
+  --black: #000000;
+  --teal-soft: #8e8e93;
+  --red: #ffffff;
+  --red-hover: #cccccc;
+  --mint-bg: #0a0a0a;
+  --mint-card: #161616;
+  --mint-divider: #222222;
+  --ink: #ffffff;
+  --ink-soft: #a1a1a1;
+  --gold: #e5e5ea;
+  --gold-bright: #ffffff;
   --transparent: #00000000;
 
-  --grad-brand: linear-gradient(135deg, var(--teal), var(--teal-soft));
-  --grad-accent: linear-gradient(135deg, var(--red), #FF4D52);
-  --grad-deep: linear-gradient(160deg, var(--teal-dark) 0%, #15584E 100%);
-  --grad-glow: radial-gradient(circle, rgba(22, 94, 84, 0.25), transparent 65%);
+  --grad-brand: linear-gradient(135deg, #1c1c1e, #2c2c2e);
+  --grad-accent: linear-gradient(135deg, #ffffff, #cccccc);
+  --grad-deep: linear-gradient(160deg, #050505 0%, #161616 100%);
+  --grad-glow: radial-gradient(circle, rgba(255, 255, 255, 0.08), transparent 65%);
 
-  --shadow-sm: 0 4px 18px rgba(10, 60, 54, 0.05);
-  --shadow-md: 0 16px 50px rgba(10, 60, 54, 0.12);
-  --shadow-glow: 0 24px 70px rgba(10, 60, 54, 0.22);
-  --shadow-red-glow: 0 12px 30px rgba(229, 35, 41, 0.25);
+  --shadow-sm: 0 4px 18px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 16px 50px rgba(0, 0, 0, 0.7);
+  --shadow-glow: 0 24px 70px rgba(255, 255, 255, 0.05);
+  --shadow-red-glow: 0 8px 24px rgba(255, 255, 255, 0.05);
 
-  --font-display: 'Google Sans Flex', Georgia, 'Times New Roman', serif;
-  --font-body: 'Google Sans Flex', system-ui, -apple-system, sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --maxw: 1180px;
 
   --transition-smooth: all .3s cubic-bezier(.4, 0, .2, 1);
@@ -126,7 +125,7 @@ h3 {
   font-weight: 400;
   letter-spacing: 0.05em;
   text-transform: capitalize;
-  color: #5A0F3B;
+  color: var(--teal-soft);
   display: inline-flex;
   align-items: center;
   gap: 0.4em;
@@ -184,28 +183,22 @@ h3 {
 
 .btn-primary {
   background: var(--transparent);
-  border: 1px solid #484239;
-  color: #484239;
-  box-shadow: var(--shadow-red-glow);
+  border: 1px solid var(--white);
+  color: var(--white);
 }
 
 .btn-primary-contrast {
   background: var(--transparent);
   border: 1px solid var(--white);
   color: var(--white);
-  box-shadow: var(--shadow-red-glow);
 }
 
-.btn-primary-contrast:hover {
-  background: var(--grad-accent);
-  color: #fff;
-  border: 1px solid #484239;
-}
-
+.btn-primary-contrast:hover,
 .btn-primary:hover {
-  background: var(--grad-accent);
-  color: #fff;
-  border: 1px solid #484239;
+  background: var(--white);
+  color: #000000;
+  border-color: var(--white);
+  transform: translateY(-2px);
 }
 
 .btn-ghost {
@@ -222,8 +215,7 @@ h3 {
 
 .btn-light {
   background: #fff;
-  color: var(--teal);
-  box-shadow: var(--shadow-sm);
+  color: var(--black);
 }
 
 .btn-light:hover {
@@ -264,10 +256,11 @@ h3 {
   justify-content: space-between;
   padding: 18px clamp(20px, 5vw, 40px);
   transition: background 0.4s, box-shadow 0.4s, padding 0.4s;
+  mix-blend-mode: screen;
 }
 
 .nav.scrolled {
-  background: rgba(242, 247, 246, 0.88);
+  background: rgba(10, 10, 10, 0.88);
   backdrop-filter: blur(14px);
   box-shadow: 0 1px 0 var(--mint-divider);
   padding: 12px clamp(20px, 5vw, 40px);
@@ -280,26 +273,16 @@ h3 {
   font-family: var(--font-display);
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--teal);
+  color: var(--white);
   letter-spacing: 0.01em;
+  mix-blend-mode: screen;
 }
 
 .brand .mark {
   height: 75px;
   width: auto;
-  border-radius: 8px;
   flex: none;
-}
-
-.brand small {
-  display: block;
-  font-family: var(--font-body);
-  font-size: 0.52rem;
-  font-weight: 600;
-  letter-spacing: 0.34em;
-  text-transform: uppercase;
-  color: var(--red);
-  margin-top: -2px;
+  mix-blend-mode: screen;
 }
 
 .nav-links {
@@ -312,7 +295,7 @@ h3 {
 .nav-links a {
   font-size: 0.92rem;
   font-weight: 500;
-  color: var(--ink);
+  color: rgba(255, 255, 255, 0.7);
   position: relative;
   transition: color 0.25s;
 }
@@ -329,7 +312,7 @@ h3 {
 }
 
 .nav-links a:hover {
-  color: var(--red);
+  color: var(--white);
 }
 
 .nav-links a:hover::after {
@@ -392,7 +375,7 @@ h3 {
 
 .nav:not(.scrolled) .btn-primary:hover {
   border-color: #484239;
-  color: var(--white);
+  color: var(--black);
 }
 
 @media (max-width: 980px) {
@@ -422,7 +405,7 @@ h3 {
   height: 60vw;
   max-width: 760px;
   max-height: 760px;
-  background: radial-gradient(circle, rgba(22, 94, 84, 0.22), transparent 62%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.06), transparent 62%);
   filter: blur(8px);
   z-index: 0;
 }
@@ -435,7 +418,7 @@ h3 {
   width: 48vw;
   height: 48vw;
   max-width: 620px;
-  background: radial-gradient(circle, rgba(229, 35, 41, 0.08), transparent 65%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.03), transparent 65%);
   z-index: 0;
 }
 
@@ -467,7 +450,7 @@ h3 {
 }
 
 .hero h1 .glow {
-  background: linear-gradient(135deg, var(--white) 30%, var(--gold-bright) 100%);
+  background: var(--grad-accent);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -512,6 +495,7 @@ h3 {
 
 .hero .btn-primary:hover {
   border-color: #484239;
+  color: var(--black);
 }
 
 .hero .btn-ghost {
@@ -615,7 +599,7 @@ h3 {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(120% 60% at 50% 0%, rgba(22, 94, 84, 0.25), transparent 55%), linear-gradient(180deg, transparent 55%, rgba(7, 44, 40, 0.35));
+  background: radial-gradient(120% 60% at 50% 0%, rgba(255, 255, 255, 0.15), transparent 55%), linear-gradient(180deg, transparent 55%, rgba(0, 0, 0, 0.45));
   mix-blend-mode: screen;
   pointer-events: none;
 }
@@ -633,7 +617,8 @@ h3 {
 
 .badge-float {
   position: absolute;
-  background: #fff;
+  background: var(--mint-card);
+  border: 1px solid var(--mint-divider);
   border-radius: 18px;
   box-shadow: var(--shadow-md);
   padding: 14px 18px;
@@ -658,7 +643,7 @@ h3 {
   display: block;
   font-family: var(--font-display);
   font-size: 1.15rem;
-  color: var(--teal-dark);
+  color: var(--white);
   line-height: 1;
 }
 
@@ -689,10 +674,10 @@ h3 {
 
 /* STRIP */
 .strip {
-  background: var(--white);
+  background: #0d0d0d;
   border-top: 1px solid var(--mint-divider);
   border-bottom: 1px solid var(--mint-divider);
-  color: var(--teal-dark);
+  color: var(--white);
   overflow: hidden;
   padding: 14px 0;
 }
@@ -760,7 +745,7 @@ section {
 
 .section-head h2 {
   font-size: clamp(2.1rem, 4.4vw, 3.3rem);
-  color: var(--teal-dark);
+  color: var(--white);
   margin: 18px 0 16px;
 }
 
@@ -775,7 +760,7 @@ section {
 }
 
 .bg-mint-lilac {
-  background: rgba(225, 236, 235, 0.45);
+  background: #0e0e0e;
 }
 
 /* SERVICES */
@@ -786,7 +771,7 @@ section {
 }
 
 .svc {
-  background: #fff;
+  background: var(--mint-card);
   border-radius: 16px;
   padding: 36px 30px;
   box-shadow: var(--shadow-sm);
@@ -803,24 +788,24 @@ section {
 .svc:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-glow);
-  border-color: var(--red);
+  border-color: var(--white);
 }
 
 .svc .ico {
   width: 56px;
   height: 56px;
   border-radius: 12px;
-  background: var(--mint-bg);
+  background: rgba(255, 255, 255, 0.05);
   display: grid;
   place-items: center;
-  color: var(--teal);
+  color: var(--white);
   margin-bottom: 22px;
   transition: background 0.3s, color 0.3s;
 }
 
 .svc:hover .ico {
-  background: rgba(229, 35, 41, 0.1);
-  color: var(--red);
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--white);
 }
 
 .svc .ico svg {
@@ -830,13 +815,13 @@ section {
 
 .svc h3 {
   font-size: 1.45rem;
-  color: var(--teal-dark);
+  color: var(--white);
   margin-bottom: 10px;
   transition: color 0.3s;
 }
 
 .svc:hover h3 {
-  color: var(--teal);
+  color: var(--white);
 }
 
 .svc p {
@@ -874,11 +859,11 @@ section {
 }
 
 .team-card {
-  background: #fff;
+  background: var(--mint-card);
   border-radius: 24px;
   padding: 38px 30px;
   box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--mint-divider);
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s;
   text-align: center;
   display: flex;
@@ -913,7 +898,7 @@ section {
 
 .team-card h3 {
   font-size: 1.6rem;
-  color: var(--teal-dark);
+  color: var(--white);
   margin-bottom: 6px;
 }
 
@@ -922,7 +907,7 @@ section {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--red);
+  color: var(--teal-soft);
   margin-bottom: 12px;
 }
 
@@ -951,13 +936,13 @@ section {
 
 .about-copy h2 {
   font-size: clamp(2rem, 4vw, 3rem);
-  color: var(--teal-dark);
+  color: var(--white);
   margin: 16px 0 18px;
 }
 
 .about-copy h2 em {
   font-style: italic;
-  color: var(--red);
+  color: var(--white);
 }
 
 .about-copy p {
@@ -966,7 +951,7 @@ section {
 }
 
 .about-copy p strong {
-  color: var(--teal-dark);
+  color: var(--white);
   font-weight: 600;
 }
 
@@ -1023,7 +1008,7 @@ section {
 .why {
   padding: 34px 28px;
   border-radius: 16px;
-  background: #fff;
+  background: var(--mint-card);
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--mint-divider);
   text-align: left;
@@ -1032,14 +1017,14 @@ section {
 
 .why:hover {
   transform: translateY(-6px);
-  border-color: var(--teal-soft);
+  border-color: var(--white);
   box-shadow: var(--shadow-md);
 }
 
 .why .n {
   font-family: var(--font-display);
   font-size: 1.5rem;
-  color: var(--red);
+  color: var(--teal-soft);
   font-weight: 600;
   letter-spacing: 0.05em;
   border-bottom: 2px solid var(--mint-divider);
@@ -1053,16 +1038,16 @@ section {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: var(--mint-bg);
+  background: rgba(255, 255, 255, 0.05);
   display: grid;
   place-items: center;
-  color: var(--teal);
+  color: var(--white);
   margin: 14px 0 16px;
 }
 
 .why h3 {
   font-size: 1.25rem;
-  color: var(--teal-dark);
+  color: var(--white);
   margin-bottom: 8px;
 }
 
@@ -1169,10 +1154,11 @@ section {
 }
 
 .tst {
-  background: #fff;
+  background: var(--mint-card);
   border-radius: 22px;
   padding: 32px 30px;
   box-shadow: var(--shadow-sm);
+  border: 1px solid var(--mint-divider);
   position: relative;
 }
 
@@ -1180,8 +1166,8 @@ section {
   font-family: var(--font-display);
   font-size: 3.4rem;
   line-height: 0.6;
-  color: var(--red);
-  opacity: 0.4;
+  color: var(--white);
+  opacity: 0.2;
   height: 24px;
 }
 
@@ -1201,8 +1187,8 @@ section {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: var(--teal);
-  color: #fff;
+  background: var(--white);
+  color: #000000;
   display: grid;
   place-items: center;
   font-weight: 700;
@@ -1211,7 +1197,7 @@ section {
 
 .tst .who b {
   display: block;
-  color: var(--teal-dark);
+  color: var(--white);
   font-size: 0.95rem;
 }
 
@@ -1250,12 +1236,12 @@ section {
   position: relative;
   font-family: var(--font-display);
   font-size: 1.35rem;
-  color: var(--teal-dark);
+  color: var(--white);
   transition: color 0.25s;
 }
 
 .faq-q:hover {
-  color: var(--red);
+  color: var(--teal-soft);
 }
 
 .faq-q .pm {
@@ -1379,10 +1365,11 @@ section {
 }
 
 .loc-card {
-  background: #fff;
+  background: var(--mint-card);
   border-radius: 24px;
   overflow: hidden;
   box-shadow: var(--shadow-md);
+  border: 1px solid var(--mint-divider);
   display: flex;
   flex-direction: column;
 }
@@ -1399,8 +1386,9 @@ section {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--teal-soft);
+  color: var(--white);
   background: var(--mint-bg);
+  border: 1px solid var(--mint-divider);
   padding: 0.45em 0.9em;
   border-radius: 50px;
   margin-bottom: 14px;
@@ -1408,7 +1396,7 @@ section {
 
 .loc-card h3 {
   font-size: 1.6rem;
-  color: var(--teal-dark);
+  color: var(--white);
   margin-bottom: 12px;
 }
 
@@ -1425,7 +1413,7 @@ section {
   align-items: center;
   gap: 10px;
   margin-bottom: 18px;
-  color: var(--teal-dark);
+  color: var(--white);
   font-weight: 600;
 }
 
@@ -1634,9 +1622,10 @@ section {
     right: 0;
     flex-direction: column;
     gap: 0;
-    background: #fff;
+    background: #111111;
     box-shadow: var(--shadow-md);
     padding: 8px 0;
+    border-top: 1px solid var(--mint-divider);
   }
 
   .nav-links.open li {
