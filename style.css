@@ -352,18 +352,46 @@ h3 {
 .brand {
   display: flex;
   align-items: center;
-  gap: 11px;
+  gap: 14px;
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 600;
   color: var(--black);
-  letter-spacing: 0.01em;
+  text-decoration: none;
 }
 
 .brand .mark {
   height: 90px;
   width: auto;
   flex: none;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+  padding-left: 14px;
+  text-align: left;
+}
+
+.brand-title {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: 0.04em;
+  color: var(--black);
+  text-transform: uppercase;
+}
+
+.brand-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.58rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.20em;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  margin-top: 5px;
 }
 
 .nav-links {
@@ -1618,12 +1646,36 @@ section {
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  gap: 14px;
 }
 
 .footer .brand .mark {
-  height: 150px;
+  height: 90px;
   width: auto;
   border: none;
+}
+
+.footer .brand-text {
+  border-left: none;
+  padding-left: 0;
+  text-align: center;
+  align-items: center;
+}
+
+.footer .brand-title {
+  color: #fff;
+  font-size: 1.65rem;
+}
+
+.footer .brand-subtitle-footer {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--teal-soft);
+  margin-top: 6px;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  display: block;
 }
 
 .footer .brand small {
@@ -1761,6 +1813,20 @@ section {
 
 @media (max-width: 980px) {
 
+  .brand .mark {
+    height: 60px;
+  }
+  .brand-title {
+    font-size: 1.25rem;
+  }
+  .brand-subtitle {
+    font-size: 0.5rem;
+    letter-spacing: 0.16em;
+  }
+  .brand-text {
+    padding-left: 12px;
+  }
+
   .nav-links,
   .nav-cta .btn {
     display: none;
@@ -1860,6 +1926,19 @@ section {
 }
 
 @media (max-width: 560px) {
+
+  .brand .mark {
+    height: 48px;
+  }
+  .brand-title {
+    font-size: 1.05rem;
+  }
+  .brand-subtitle {
+    display: none;
+  }
+  .brand-text {
+    padding-left: 8px;
+  }
 
   .svc-grid,
   .tst-grid,
