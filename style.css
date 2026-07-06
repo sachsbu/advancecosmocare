@@ -1544,7 +1544,6 @@ section {
 }
 
 .loc-grid {
-  display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 22px;
 }
@@ -1816,13 +1815,16 @@ section {
   .brand .mark {
     height: 60px;
   }
+
   .brand-title {
     font-size: 1.25rem;
   }
+
   .brand-subtitle {
     font-size: 0.5rem;
     letter-spacing: 0.16em;
   }
+
   .brand-text {
     padding-left: 12px;
   }
@@ -1930,12 +1932,15 @@ section {
   .brand .mark {
     height: 48px;
   }
+
   .brand-title {
     font-size: 1.05rem;
   }
+
   .brand-subtitle {
     display: none;
   }
+
   .brand-text {
     padding-left: 8px;
   }

@@ -21,7 +21,7 @@ To capture local searches (Modasa, Arvalli), always keep the local meta headers 
 Ensure the JSON-LD schemas validate correctly and connect matching entity nodes:
 * **Entity Graphing:** Use `@graph` arrays to map relationships. Specifically:
   - The main Organization `https://advancecosmocare.in/#org` representing the clinic brand.
-  - Separate branches as `MedicalClinic` / `HealthAndBeautyBusiness` nodes (e.g., `https://advancecosmocare.in/#clinic-shamlaji_road`, `https://advancecosmocare.in/#clinic-malpur_road`).
+  - Separate branches as `MedicalClinic` / `HealthAndBeautyBusiness` nodes (e.g., `https://advancecosmocare.in/#clinic-malpur_road`).
   - Explicitly link branches to the organization using `"branchOf": { "@id": "https://advancecosmocare.in/#org" }`.
 * **Offers & Procedures:** Update Organization `"makesOffer"` whenever new treatments are added.
 * **FAQ Schema:** Maintain the `FAQPage` schema parallel to any questions modified/added in the visible FAQ accordion section.
